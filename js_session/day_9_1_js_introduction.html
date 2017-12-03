@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS intoduction</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn-primary btn" onclick="person()">Click Me and Run the Programme</button>
+            </div>
+            <div class="col-md-3">
+            	<div class="well well-lg" id="demo1">
+            		Result:==?
+            	</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var person = function() {
+        var name = 'Pankaj',
+            surname = 'Rana',
+            add = "New Ashok Nagar";
+        document.getElementById('demo1').innerHTML = "My name is " + name + " " + surname;
+        
+    }
+
+    </script>
+</body>
+
+</html>

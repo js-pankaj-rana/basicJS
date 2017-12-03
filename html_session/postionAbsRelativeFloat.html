@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo Classxes</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <!-- http://triangle.designyourcode.io/ -->
+    <!-- https://caniuse.com/  -->
+</head>
+
+<body>
+    <div class="container">
+		
+		<div class="panel panel-primary">
+			<div class="panel-heading">Hello World</div>
+			<div class="panel-body">
+				The quiickl adskf lksdf jlasd flja sdfl a
+			</div>
+			<div class="panel-footer">
+				ahkdsfh kajds kf askjfd kjas dfkjj af
+			</div>
+			<div class="custom-bg"><img src="./images/pexels-photo-370799.jpeg" /></div>
+		</div>	        
+
+    </div>
+    <!-- <div class="container">
+    	<div class="pos-a black"></div>
+    	<div class="pos-a red"></div>
+    	<div class="pos-a yellow"></div>
+    	<div class="pos-a green"></div>
+    </div> -->
+
+
+    <div class="mycontainer">
+    	<div class="fl black1"></div>
+    	<div class="fr red1"></div>
+    </div>
+
+
+
+
+    <style>
+    .panel-primary{position: relative; overflow: hidden; z-index: 2;}
+
+    .custom-bg{
+    		position: absolute;
+    		top:0;
+    		right: 0;
+    		z-index: -1;
+    	}
+    .pos-a{
+    	position: absolute;
+    	width: 100px;
+    	height: 100px;
+    	border: 1px solid #d7d7d7;
+    }
+    .black{
+    	background-color: #000000;
+    	z-index: 1;
+    	left: 0;
+    }
+    .red{
+    	background-color: #ff0000;
+    	z-index: 2;
+    	left: 20px;
+    }
+    .green{
+    	background: #00ff00;
+    	z-index: 3;
+    	left: 40px;
+    }
+    .yellow{
+		background: yellow;
+		z-index: 4;
+    	left: 60px;
+    }
+	.fl{float: left;}
+	.fr{float: right;}
+	.black1{
+		width: 100px;
+		height: 100px;
+		border: 1px solid #d7d7d7;
+
+	}
+	.red1{
+		width: 100px;
+		height: 100px;
+		border: 1px solid #d7d7d7;
+		padding:10px; 
+	}
+	.mycontainer{
+		display: table;
+		width: 100%; 
+	}
+    </style>
+</body>
+</html>

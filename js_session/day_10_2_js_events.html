@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS intoduction</title>
+    </head>
+<body>
+	<button id="clickMe">Click Me</button>
+	
+	<h1>Hello World1</h1>
+	<h1>Hello World2</h1>
+	<h1>Hello World3</h1>
+	<h1>Hello World4</h1>
+	<h1>Hello World5</h1>
+	<h1>Hello World6</h1>
+	<div id="copyContent" style="background: #f5f5f5; max-width: 400px; float: right;"></div>
+	
+	<script type="text/javascript">
+	// DRY
+	// https://www.w3schools.com/jsref/dom_obj_event.asp
+
+	// addEventListener
+	// innerHTML
+	// this
+
+	var h1 = document.getElementsByTagName('h1');
+	var divElement = document.getElementById('copyContent');
+	var clickMe = document.getElementById('clickMe');
+	// console.log(this);
+	clickMe.addEventListener('click', function() {
+	 	// console.log(h1.length);
+	 	var myData = [];
+	 	for(var i=0; i < h1.length; i++ ){
+	 		// console.log(h1[i]);
+	 		myData.push(h1[i].innerHTML);
+	 		console.log(myData)
+	 		divElement.innerHTML = myData.join(' ');
+	 	}
+	})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>html 5 Session</title>
+	 <link rel="stylesheet" href="css/bootstrap.css">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<h1>HTML5 Storage</h1>
+			<div class="well" id="storageData" style="display: none;"></div>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div style="width: calc(265px * 3)">
+			<div class="slides"></div>
+			<div class="slides"></div>
+			<div class="slides"></div>
+		</div>
+	</div>
+</div>
+<style>
+	.wrapper{
+		height: 200px;
+		border:1px solid #d7d7d7;
+		width: 500px;
+		margin:0 auto;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+	.slides{
+			width: 250px;
+			height: 200px;
+			display: inline-block;
+			margin-right: 10px;
+			background: #d7d7d7;
+	}
+</style>
+<!-- http://www.colorzilla.com/gradient-editor/ -->
+<script>
+
+	 // var data = prompt("Student Name", 'Name');
+	 // localStorage.setItem("Stundent", data);
+
+	var elementID = document.getElementById("storageData");
+
+	elementID.innerHTML = localStorage.getItem("Stundent");
+	elementID.style.display = "block";
+</script>
+
+</body>
+</html>

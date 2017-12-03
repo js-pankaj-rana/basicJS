@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS intoduction</title>
+    </head>
+<body>
+
+<script type="text/javascript">
+	// parseFloat
+	// parseInt
+	// isNaN
+	// prompt
+
+	/*var x, y, z;
+	
+	x = 5;
+	y = 10;
+	z = x + y;
+	
+	document.write(z)*/
+
+	var x, y, z;
+	
+	x = parseInt(prompt("Please enter a number", ''));
+	y = parseInt(prompt("Please enter a number", '') + '10' )  ;
+
+	z = x + y;
+	/*if( !isNaN(z) )	document.write(z);
+	else alert("this is not a valid entry");	
+	*/
+	if( !isNaN(z) ){
+		document.write(z);
+	}
+	else {
+		alert("this is not a valid entry");	
+	}
+
+</script>
+</body>
+</html>

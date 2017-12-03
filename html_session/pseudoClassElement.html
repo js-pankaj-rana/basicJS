@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo Classxes</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <!-- http://triangle.designyourcode.io/ -->
+    <!-- https://caniuse.com/  -->
+</head>
+
+<body>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success">First item</li>
+            <li class="list-group-item list-group-item-primary">Second item</li>
+            <li class="list-group-item list-group-item-warning">Third item</li>
+            <li class="list-group-item list-group-item-danger">Fourth item</li>
+        </ul>
+    </div>
+
+<style>
+	.list-group > li:nth-child(2) { /* font-size: 1.5em; */ }
+	.list-group > li:nth-child(2n+1) {/*  font-size: 1.5em; */ }
+	.list-group > li:nth-child(even) { /* font-size: 1.5em; */ }
+	.list-group > li:nth-child(odd) { /* font-size: 1.5em; */ }
+	.list-group > li:first-child {  /* font-size: 1.5em; */  }
+	.list-group > li:last-child {  /* font-size: 1.5em; */  }
+	.list-group > li:nth-last-child(2) {   /* font-size: 1.5em; */   }
+	
+	.list-group > li:before { 
+     /* display: inline-block; 
+         width: 0;
+         height: 0;
+         border-style: solid;
+         border-width: 10px 0 10px 15px;
+         border-color: transparent transparent transparent #23cb25; 
+         content: '';
+         	vertical-align: middle;
+         	margin: 0 10px 0 0;  */
+    /* content: '\00B6'; */
+} 
+
+.list-group > li:before { 
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    border-style: solid;
+    border-width: 0px 2px 2px 0;
+    border-color: #23cb25; 
+    content: '';
+	margin: 0 10px 0 0;
+	transform: rotate(45deg);
+    /* content: '\00B6'; */
+} 
+.list-group > li:after { 
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #23cb25; 
+    content: '';
+	vertical-align: middle;
+	margin: 0 0 0 10px;
+	transform: rotate(-180deg);
+    /* content: '\00B6'; */
+} 
+
+</style>
+
+</body>
+</html>

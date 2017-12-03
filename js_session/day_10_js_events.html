@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS intoduction</title>
+    </head>
+<body>
+	<h1>Hello World</h1>
+<script type="text/javascript">
+	// DRY
+	// https://www.w3schools.com/jsref/dom_obj_event.asp
+
+	// addEventListener
+	// innerHTML
+	// this
+
+	var h1 = document.getElementsByTagName('h1')[0];
+	// console.log(this);
+	h1.addEventListener('click', function() {
+		alert(this.innerHTML)
+	})
+
+</script>
+</body>
+</html>

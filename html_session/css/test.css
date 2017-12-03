@@ -1,0 +1,121 @@
+ body{
+font-family:'Arial', sans-serif;
+}
+.from-wrap{
+	background:#5fcf80 url('../images/heroshot.svg');
+	padding:5% 0 15%;
+}
+
+.header
+{
+background-color: #637a91;
+border-top-left-radius:3px;
+border-top-right-radius:3px;
+}
+
+.header p
+{
+color: #ffffff;
+font-size:15px;
+line-height:65px;
+height:65px;
+text-align:center;
+}
+.table{
+display:table;
+width:100%;
+}
+.tr{
+display:table-row;
+}
+.td{
+display:table-cell;
+}
+.sign-form{
+	width:585px;
+	margin:0px auto 0 auto;
+	border-radius:3px;
+	background-color:#fff;
+}
+
+
+.input-label {
+    display: block;
+    color: #333333;
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.sign-form .td {
+    padding: 25px 10px 0 0;
+}
+
+.sign-form .table {
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.ip-fld {
+    font-size: 14px;
+    height: 43px;
+    line-height: 43px;
+    width: 98%;
+    border-radius: 3px;
+    border: 2px solid #d4d9dd;
+    background-color: #f9fafa;
+    padding: 0 10px;
+}
+
+.ip-fld:focus {
+}
+
+.sign-form .td:nth-child(even) {
+    padding-right: 0;
+}
+
+.btn-wrap {
+    margin: 0 30px;
+}
+
+.separator {
+    margin: 24px 30px;
+    height: 1px;
+    background: #edeff0;
+}
+
+a.btn-submit {
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #5fcf80;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.ico.right-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 12px;
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+p.tnc {
+    padding: 20px 0 50px;
+    margin: 0 30px;
+    font-size: 12px;
+    color: #333;
+}
+
+a.tans-txt {
+    color: #91b4d6;
+    text-decoration: none;
+}

@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap classes</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+                <li class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">HTML</a></li>
+                      <li><a href="#">CSS</a></li>
+                      <li><a href="#">JavaScript</a></li>
+                    </ul>
+                  </li>
+
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="jumbotron">
+       <div class="container">
+            <h1>Welcome to the website development</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-3 col-md-offset-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Welcome</div>
+                    <div class="panel-body">
+                        adsfhkasd fk ahsdkf jkasd fhkash sdfk askdf
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+    	$('.form-check-input-custom').on('click', function() {
+    		$(this).toggleClass('active');
+    	})
+    </script>
+</body>
+</html>
