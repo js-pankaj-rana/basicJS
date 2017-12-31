@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Html Storage</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+
+<div class="container">
+    <div class="well-lg">
+        <p>The Six JavaScript Error Types</p>
+
+<p>The JavaScript 1.5 specification defines six primary error types, as follows:</p>
+
+<p>EvalError: Raised when the eval() functions is used in an incorrect manner.</p>
+<p>RangeError: Raised when a numeric variable exceeds its allowed range.</p>
+<p>ReferenceError: Raised when an invalid reference is used.</p>
+<p>SyntaxError: Raised when a syntax error occurs while parsing JavaScript code.</p>
+<p>TypeError: Raised when the type of a variable is not as expected.</p>
+<p>URIError: Raised when the encodeURI() or decodeURI() functions are used in an incorrect manner.</p>
+</div>
+</div>
+
+<body>
+    <script type="text/javascript">
+    try {
+        myroutine(); // may throw three types of exceptions
+    } catch (e){
+    	console.log(e);
+    	 if (e instanceof TypeError) {
+        console.log("statements to handle TypeError exceptions"); 
+        alert("TypeError")
+	    } else if (e instanceof RangeError) {
+	        console.log("statements to handle RangeError exceptions")
+	        alert("RangeError")
+	    } else if (e instanceof EvalError) {
+	        console.log("statements to handle EvalError exceptions")
+	        alert("EvalError")
+	    } else {
+	       console.log("statements to handle any unspecified exceptions")
+	       logMyErrors(e); // pass exception object to error handler
+	    }
+
+    }
+
+    function myroutine(){
+    	console.log(pk);
+    	console.log("sadfadf");
+    }
+    function logMyErrors(e){
+    	console.log(e.message)
+        // alert(e);
+    }
+
+/*    var num = '123'
+var num1 = '123Abcd'
+var num2 = 'Abcd123'
+var newVal = parseInt(num)
+var newVal1 = parseInt(num1)
+var newVal2 = parseInt(num2)
+
+console.log(newVal);
+*/
+    </script>
+</body>
+
+</html>

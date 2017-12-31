@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="clock">
+		<div class="second"></div>
+		<div class="minute"></div>
+		<div class="hours"></div>
+
+		<div class="number">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+			</ul>
+
+
+		</div>
+		
+
+	</div>
+	<style>
+		.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    position: relative;
+    margin: 0 auto;
+}
+
+.second {
+    height: 130px;
+    width: 2px;
+    position: absolute;
+    left: calc(50% - 2px);
+    z-index: 20;
+    background-color: red;
+    top: 20px;
+    transform: rotate(0deg);
+}
+
+.minute {
+    width: 4px;
+    height: 110px;
+    background: red;
+    position: absolute;
+    left: calc(50% - 2px);
+    top: 40;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial;
+    color: #23ff23;
+}
+
+li {
+    position: absolute;
+}
+
+li:first-child {
+    top: 0px;
+    left: calc(50% - 9px);
+    z-index: 10;
+    font-size: 25px;
+    color: yellow;
+}
+	</style>
+</body>
+</html>

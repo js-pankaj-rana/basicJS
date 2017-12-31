@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Html Storage</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="well-lg">
+            <p>The Six JavaScript Error Types</p>
+            <p>The JavaScript 1.5 specification defines six primary error types, as follows:</p>
+            <p>EvalError: Raised when the eval() functions is used in an incorrect manner.</p>
+            <p>RangeError: Raised when a numeric variable exceeds its allowed range.</p>
+            <p>ReferenceError: Raised when an invalid reference is used.</p>
+            <p>SyntaxError: Raised when a syntax error occurs while parsing JavaScript code.</p>
+            <p>TypeError: Raised when the type of a variable is not as expected.</p>
+            <p>URIError: Raised when the encodeURI() or decodeURI() functions are used in an incorrect manner.</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+       try {
+              decodeURIComponent('%');
+              // throw new Error('Your url is wrong')
+            } catch (e) {
+              console.log(e instanceof URIError); // true
+              console.log(e.message);             // "malformed URI sequence"
+              /*console.log(e.name);                // "URIError"
+              console.log(e.fileName);            // "Scratchpad/1"
+              console.log(e.lineNumber);          // 2
+              console.log(e.columnNumber);        // 2
+              console.log(e.stack);               // "@Scratchpad/2:2:3\n"*/
+            } 
+
+    </script>
+</body>
+</html>

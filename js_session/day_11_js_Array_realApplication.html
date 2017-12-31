@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+    <script src="js/jquery-1.11.3.js"></script>
+</head>
+<body>
+    
+    <ul id="arrayData">
+    </ul>
+    
+    <button type="button" onclick="addArrayItem()">Add User</button>
+
+
+    <script>
+    var myArr1 = ["Pankaj", "Mintoo", "Sweta", "Rajive", "Rajni", "Sushil", "Ramesh"];
+    
+/*    myArr1.forEach(function (value, key){
+		console.log("value:==> " + value + "key:==> "+ key);
+	})
+	*/
+	renderHtml();
+
+function renderHtml(){
+	  //annonymous
+    myArr1.forEach(function(el) {
+        var html = '<li><span class="jqElement">' + el + '</span><button onclick="editItem(this)">Edit</button><button onclick="editItem(this)">Delete</button></li>';
+        // var html = ['<li>',
+        // 			el,
+        // 			'<button>Edit/Update</button>',
+        // 			'<button>Delete</button>',
+        // 			'</li>'].join(' ');
+
+        $('#arrayData').append(html);
+    })
+}
+
+    
+    var editItem = function(obj){
+    	var dataText =  $(obj).text();
+    	if(dataText == 'Edit'){
+    		contentEdit(obj);
+    		$('#arrayData').html('');
+    		renderHtml();
+    	}
+    	else{
+    		contentDelete(obj);
+    		$('#arrayData').html('');
+    		renderHtml();
+    	}
+    }
+
+    var contentEdit = function(obj){
+    	var arrayDataItem = $(obj).siblings('.jqElement').text();
+    	var getIndex = $(obj).parent().index();
+
+    	var getData = prompt("Please Update Your Content", arrayDataItem);
+    	myArr1[getIndex] = getData;
+
+    } 
+    var contentDelete = function(obj){
+		var getIndex = $(obj).parent().index();
+		myArr1.splice(getIndex, 1);
+    }
+
+    var addArrayItem = function(){
+    	var addItem = prompt('Add a New User', 'User Name');
+    	myArr1.push(addItem);
+    	$('#arrayData').html('');
+    	renderHtml();
+    }
+    </script>
+    <style>
+    button {
+        margin-left: 10px;
+    }
+
+    li {
+        margin-bottom: 5px;
+        font-family: arial;
+    }
+
+    ul#arrayData {
+        list-style: none;
+    }
+    </style>
+</body>
+
+</html>

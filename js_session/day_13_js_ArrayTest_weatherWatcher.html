@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Array</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                
+                <ul id="arrayData" class="list-group">
+                    
+                </ul>
+                <button class="btn btn-primary">Add User</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+	var data = []
+	$.ajax({
+		'url' : 'http://api.wunderground.com/api/457c5a368e70c3ed/forecast10day/q/CA/San_Francisco.json',
+		error : function(){
+		},
+		success:function(response){
+			console.log(response)
+			data.push(response);
+		},
+		complete: function(){
+			alert('Data Fetched');
+		}
+	})
+	
+</script>
+
+</body>
+</html>

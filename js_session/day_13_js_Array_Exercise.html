@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+            	<div class="well">In which color belongs to primary color</div>	
+                <form class="form-horizontal">
+
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Option one is this and that&mdash;be sure to include why it's great
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Option two can be something else and selecting it will deselect option one
+                        </label>
+                    </div><div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Option two can be something else and selecting it will deselect option one
+                        </label>
+                    </div><div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Option two can be something else and selecting it will deselect option one
+                        </label>
+                    </div>
+                    <br/>
+                    <button class="btn btn-danger" type="submit">Sumbit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    var myQuestion = ['In which color belongs to primary color', ['cyan', 'orange', 'red', 'megenta'], 'red']
+
+    myQuestion.forEach(function(value, index) {
+        console.log(value)
+    })
+
+    myQuestion[1].forEach(function(value, index) {
+        console.log(value)
+    })
+    </script>
+</body>
+
+</html>

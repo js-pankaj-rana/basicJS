@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                
+                <ul id="arrayData" class="list-group">
+                    
+                </ul>
+                <button class="btn btn-primary" onclick="addArrayItem()">Add User</button>
+            </div>
+        </div>
+    </div>
+    <!-- <button type="button" onclick="addArrayItem()">Add User</button> -->
+    <script>
+    var myArr1 = ["Pankaj", "Mintoo", "Sweta", "Rajive", "Rajni", "Sushil", "Ramesh"];
+    
+    renderHtml();
+    function renderHtml(){
+        $('#arrayData').html(''); // document.getElementById('arrayData').innerHTML = ''; 
+
+        myArr1.forEach(function (value, key){
+            var html = '<li class="list-group-item"><span class="jqElement">'+value+'</span><div class="pull-right"><button class="btn-sm btn-danger" onclick="editItem(this)">Edit</button> <button class="btn-sm btn-danger pull-right" onclick="editItem(this)">Delete</button></div></li>';
+             // console.log("value:==> " + value + "key:==> "+ key + " html==>" + html);
+                $('#arrayData').append(html);
+        })
+  }
+    
+       var editItem = function(obj){
+            var dataText =  $(obj).text();
+
+            dataText == 'Edit' ? contentEdit(obj): contentDelete(obj);
+            
+        }
+
+         
+
+        var contentEdit = function(obj){
+            var arrayDataItem = $(obj).parent().siblings('.jqElement').text();
+            var getIndex = $(obj).parents('li').index();
+
+            var getData = prompt("Please Update Your Content", arrayDataItem);
+            myArr1[getIndex] = getData;
+            renderHtml();
+
+        } 
+        
+        var contentDelete = function(obj){
+            var getIndex = $(obj).parents('li').index();
+            myArr1.splice(getIndex, 1);
+            renderHtml();
+        }
+
+        var addArrayItem = function(){
+            var addItem = prompt('Add a New User', 'User Name');
+            if(addItem != null){
+                myArr1.push(addItem);
+                renderHtml();
+            }
+            else{
+                alert("Your have enter wrong data")
+            }
+        }
+    </script>
+</body>
+</html>

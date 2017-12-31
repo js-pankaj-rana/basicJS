@@ -25,7 +25,7 @@
 	// this
 
 	var h1 = document.getElementsByTagName('h1');
-	var divElement = document.getElementById('copyContent');
+	var abcd = document.getElementById('copyContent');
 	var clickMe = document.getElementById('clickMe');
 	// console.log(this);
 	clickMe.addEventListener('click', function() {
@@ -35,7 +35,7 @@
 	 		// console.log(h1[i]);
 	 		myData.push(h1[i].innerHTML);
 	 		console.log(myData)
-	 		divElement.innerHTML = myData.join(' ');
+	 		abcd.innerHTML = myData.join(' ');
 	 	}
 	})
 

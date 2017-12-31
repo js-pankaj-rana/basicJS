@@ -1,0 +1,191 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Form Components</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions -->
+    <style type="text/css">
+    input.valid {
+        border: 1px solid #25ef25;
+    }
+
+    input.invalid {
+        border: 1px solid red;
+    }
+
+    span.weak,
+    span.strong,
+    span.toostrong {
+        width: 50px;
+        height: 5px;
+        background-color: #d7d7d7;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    span.weak {
+        background-color: bisque;
+    }
+
+    span.strong {
+        background-color: #8f8ff3;
+    }
+
+    span.toostrong {
+        background-color: #1efd0c;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress" class="col-sm-2 control-label">Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            <div class="clearfix">
+                                <!-- <span class="weak">week</span><span class="strong">strong</span><span class="tostrong">too strong</span> -->
+
+                                <span class="weak hide"></span><span class="strong hide"></span><span class="toostrong hide"></span>
+                                <div class="msg"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label for="remember">
+                                    <input type="checkbox" id="remember" value="rem"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" id="button" class="btn btn-default">Sign in</button>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="button" class="btn btn-default">Sign in</button>
+    </div>
+  </div> -->
+                </form>
+            </div>
+            <div class="col-md-3 col-md-offset-3">
+                <div id="formData" class="well-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        var vEmail = $('#inputEmail3'),
+            vAdd = $('#inputAddress'),
+            vPwd = $('#inputPassword3'),
+            vChk = $('#remember'),
+            vBtn = $('#button');
+
+        vEmail.on('blur', function() {
+            var emailData = $(this).val();
+            var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            emailPattern.test(emailData) ? validInput(this) : invalidInput(this);
+
+
+        })
+
+        vPwd.on('keypress', function() {
+            var pwdData = $(this).val();
+            var pwdPatternWeak = /[a-z]{3,}/;
+            var pwdPatternStrong = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/
+            var pwdPatternTooStrong = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
+            
+            if(pwdPatternTooStrong.test(pwdData)){
+                if( $('.toostrong').hasClass('hide') ){
+                    $('.toostrong').removeClass('hide').siblings('span').addClass('hide');
+                    $('.msg').html('Your password is too strong');
+                }
+            }
+            else if(pwdPatternStrong.test(pwdData)){
+                if( $('.strong').hasClass('hide') ){
+                    $('.strong').removeClass('hide').siblings('span').addClass('hide');
+                    $('.msg').html('Your password is strong');
+                }
+                
+            }
+            else if(pwdPatternWeak.test(pwdData)){
+                if( $('.weak').hasClass('hide') ){
+                    $('.weak').removeClass('hide').siblings('span').addClass('hide');
+                    $('.msg').html('Your password is too weak');
+                }
+            }
+            else{
+               $(this).next('div').find('span').addClass('hide'); 
+               $('.msg').html('');
+            }
+
+        })
+        vChk.on('change', function() {
+            alert($(this).val())
+        })
+
+        vBtn.on('click', function() {
+            var vEmailVal = vEmail.val(),
+                vAddVal = vAdd.val(),
+                vPwdVal = vPwd.val();
+
+            if (vEmailVal != '' && vAddVal != '' && vPwdVal != '') {
+
+                var html = ['<p>' + vEmailVal + '</p>',
+                    '<p>' + vAddVal + '</p>',
+                    '<p>' + vPwdVal + '</p>',
+                ].join(' ');
+
+                document.getElementById('formData').innerHTML = html;
+            } else {
+                alert("Sorry! You don't have any valid input.")
+            }
+
+        })
+    })
+
+    function validInput(obj) {
+        if ($(obj).hasClass('invalid')) {
+            $(obj).removeClass('invalid').addClass('valid');
+        } else {
+            $(obj).addClass('valid');
+        }
+    }
+
+    function invalidInput(obj) {
+
+        if ($(obj).hasClass('valid')) {
+            $(obj).removeClass('valid').addClass('invalid');
+        } else {
+            $(obj).addClass('invalid');
+        }
+    }
+
+    </script>
+</body>
+
+</html>

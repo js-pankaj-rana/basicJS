@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Form Components</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<!-- http://html5pattern.com/ -->
+<!-- https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145 -->
+<!-- input:invalid{border: 1px solid red;} 
+	input:valid{border:1px solid green;}
+	input:focus{outline:none}  
+
+-->
+<body>
+    <div class="container">
+		<form action="get" name="mytest">
+			<label for="fname">Name</label>
+			<input id="fname" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{3,20}$" type="text" name="fname" value="" placeholder="pattertest(min 4, max 20)" />
+			<br/>
+			<br>
+			 <input type="button" disabled="disabled" value="Ramesh Singh" />
+			<br><br>
+			<input type="text" value="Html5Pattern" readonly />
+			<br><br> 
+						<input type="number" value="" min="2" max="10" required="required" placeholder="number" step="2" />
+			<br><br>
+			<input type="text" value="" maxlength="10" required="required" placeholder="any max-legnth" />
+			<br><br>
+			<input type="number" value="" min="10" required="required" placeholder="any min" />
+			
+			<br><br>
+			<input type="number" step="5" max="100" placeholder="Multiple of 5" />
+				<br/><br/>
+			
+				<input type="text" value="" id="requiredElement" required="required" />
+				<br/><br/>
+					<label for="city1">Delhi</label>
+					<input type="radio" id="city1" value="delhi" name="city" >
+					<label for="city2">Mumbai</label>
+					<input type="radio" id="city2" value="Mumbai" name="city" >
+					<label for="city3">Rajasthan</label>
+					<input type="radio" id="city3" value="Rajasthan" name="city" >
+					<label for="city4">Jaipur</label>
+					<input type="radio" id="city4" value="Jaipur" name="city" > 
+				<br/>
+				<input type="submit" name="submit" value="Submit" /> 
+				<input type="reset" name="reset" value="Reset" />
+				<!-- <button type="submit"></button> -->
+		
+		</form>
+		
+    </div>
+    <script>
+
+    	//Input Restrictions
+    	/*
+	    	Attribute	Description
+			disabled	Specifies that an input field should be disabled
+			max	Specifies the maximum value for an input field
+			maxlength	Specifies the maximum number of character for an input field
+			min	Specifies the minimum value for an input field
+			pattern	Specifies a regular expression to check the input value against
+			readonly	Specifies that an input field is read only (cannot be changed)
+			required	Specifies that an input field is required (must be filled out)
+			size	Specifies the width (in characters) of an input field
+			step	Specifies the legal number intervals for an input field
+			value	Specifies the default value for an input field
+		*/
+		
+    </script>
+</body>
+</html>
